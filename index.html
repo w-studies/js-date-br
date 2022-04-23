@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Date BR</title>
+  <style>
+      body {
+          font-family: sans-serif;
+      }
+
+      div {
+          padding: 12px;
+      }
+  </style>
+</head>
+<body>
+<div>
+  <small>sem abreviação:</small>
+  <br> <span class='long'></span>
+</div>
+<div>
+  <small>com abreviação:</small>
+  <br> <span class='short'></span>
+</div>
+<script>
+  document.querySelector('.long').innerText = new Date().toLocaleDateString('pt-br', {
+    month: 'long', day: 'numeric', weekday: 'long', year: 'numeric',
+  })
+  document.querySelector('.short').innerText = new Date().toLocaleDateString('pt-br', {
+    month: 'short', day: 'numeric', weekday: 'short', year: 'numeric',
+  })
+</script>
+</body>
+</html>
